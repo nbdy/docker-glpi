@@ -1,3 +1,3 @@
 # docker-glpi
 
-Run a GLPI instance with mariadb using docker compose.
+Run a GLPI 10.0.10 instance with mariadb 11.1 using docker compose.
