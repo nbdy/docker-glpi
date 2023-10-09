@@ -3,7 +3,7 @@ name: Docker Image CI
 on:
   push:
     tags:
-      - 'v*'
+      - '*'
 
 jobs:
   build:
@@ -12,4 +12,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag docker-glpi:${{ github.ref_name }} --build-arg=${{ github.ref_name }}
+      run: docker build . \
+        --file Dockerfile \
+        --tag docker-glpi:${{ github.ref_name }} \
+        --build-arg GLPI_VERSION=${{ github.ref_name }}
